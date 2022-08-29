@@ -87,9 +87,17 @@
   </div>
 </main>
 
+
+
 <script src="https://cdn.by.wonderpush.com/sdk/1.1/wonderpush-loader.min.js" async></script>
 <script>
+
+if(params.has('userId')) {
+  var userId = params.get('userId');
+}
+
 window.WonderPush = window.WonderPush || [];
+WonderPush.push(['setUserId',userId]);
 WonderPush.push(["init", {
     webKey: "88308b1bbb3d8799d31c3216c726cb5221f8baab81e447cb35b9b80fe10f1543",
 }]);
